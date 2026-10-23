@@ -6,12 +6,13 @@ import { makePgService } from "postgraphile/adaptors/pg";
 import { PostGraphileAmberPreset } from "postgraphile/presets/amber";
 
 const pgService = makePgService({
-  connectionString: "postgres:///constructive-minimal?host=/var/run/postgresql",
+  connectionString:
+    "postgres://constructive-minimal-graphql:password@localhost/constructive-minimal",
   schemas: ["tenant_000"],
 });
 
 export async function release() {
-  await pgService.release();
+  await pgService.release?.();
 }
 
 const preset: GraphileConfig.Preset = {
@@ -21,7 +22,6 @@ const preset: GraphileConfig.Preset = {
       name: "RegistrySizePlugin",
       version: "0.0.0",
       gather: {
-        namespace: "registrySize",
         hooks: {
           pgIntrospection_introspection(_info, { introspection }) {
             console.log("Introspection entries:", {
@@ -54,9 +54,13 @@ if (import.meta.main) {
   const pgl = postgraphile(preset);
   try {
     const schema = await pgl.getSchema();
-    const path = fileURLToPath(new URL("./exported-schema.mjs", import.meta.url));
+    const path = fileURLToPath(
+      new URL("./exported-schema.mjs", import.meta.url),
+    );
     await exportSchema(schema, path, { mode: "graphql-js" });
-    console.log(`Executable schema: ${path} (${(await stat(path)).size} bytes)`);
+    console.log(
+      `Executable schema: ${path} (${(await stat(path)).size} bytes)`,
+    );
   } finally {
     try {
       await pgl.release();
