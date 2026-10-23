@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "packageManager": "yarn@4.18.1",
+  "dependencies": {
+    "postgraphile": "^5.2.0-aardvark.next-20260928202932"
+  }
+}
