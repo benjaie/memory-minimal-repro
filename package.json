@@ -1,7 +1,13 @@
 {
   "type": "module",
   "packageManager": "yarn@4.18.1",
+  "scripts": {
+    "export": "node graphile.config.ts",
+    "start": "postgraphile"
+  },
   "dependencies": {
+    "grafast": "^1.2.0-aardvark.next-20260928202932",
+    "graphile-export": "^1.0.2-aardvark.next-20260928202932",
     "postgraphile": "^5.2.0-aardvark.next-20260928202932"
   }
 }
