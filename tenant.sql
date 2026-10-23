@@ -1,5 +1,6 @@
 -- Load with: psql -v SCHEMA=tenant_000 -d constructive-minimal -f tenant.sql
 BEGIN;
+SET LOCAL ROLE "constructive-minimal";
 
 CREATE SCHEMA :"SCHEMA";
 CREATE TYPE :"SCHEMA".task_state AS ENUM ('open', 'done');
@@ -93,47 +94,58 @@ SELECT format(
   format('BEGIN PERFORM pg_sleep(LEAST(seconds, 2)); RETURN %I.request_identity(); END', :'SCHEMA')
 ) \gexec
 
+CREATE FUNCTION :"SCHEMA".utility_example(value text) RETURNS text
+  LANGUAGE sql IMMUTABLE
+  AS $$SELECT hidden.format_label(value)$$;
+
+CREATE FUNCTION :"SCHEMA".private_record() RETURNS private.private_records
+  LANGUAGE sql STABLE SECURITY DEFINER
+  SET search_path = pg_catalog
+  AS $$SELECT id, label FROM private.private_records WHERE id = 1$$;
+
 ALTER TABLE :"SCHEMA".accounts ENABLE ROW LEVEL SECURITY;
 ALTER TABLE :"SCHEMA".accounts FORCE ROW LEVEL SECURITY;
-CREATE POLICY tenant_owner ON :"SCHEMA".accounts TO bench_reader USING
+CREATE POLICY tenant_owner ON :"SCHEMA".accounts TO "constructive-minimal-graphql" USING
   (tenant_key = current_setting('jwt.claims.tenant', true) AND owner_id::text = current_setting('jwt.claims.user_id', true));
 ALTER TABLE :"SCHEMA".projects ENABLE ROW LEVEL SECURITY;
 ALTER TABLE :"SCHEMA".projects FORCE ROW LEVEL SECURITY;
-CREATE POLICY tenant_owner ON :"SCHEMA".projects TO bench_reader USING
+CREATE POLICY tenant_owner ON :"SCHEMA".projects TO "constructive-minimal-graphql" USING
   (tenant_key = current_setting('jwt.claims.tenant', true) AND owner_id::text = current_setting('jwt.claims.user_id', true));
 ALTER TABLE :"SCHEMA".tasks ENABLE ROW LEVEL SECURITY;
 ALTER TABLE :"SCHEMA".tasks FORCE ROW LEVEL SECURITY;
-CREATE POLICY tenant_owner ON :"SCHEMA".tasks TO bench_reader USING
+CREATE POLICY tenant_owner ON :"SCHEMA".tasks TO "constructive-minimal-graphql" USING
   (tenant_key = current_setting('jwt.claims.tenant', true) AND owner_id::text = current_setting('jwt.claims.user_id', true));
 ALTER TABLE :"SCHEMA".notes ENABLE ROW LEVEL SECURITY;
 ALTER TABLE :"SCHEMA".notes FORCE ROW LEVEL SECURITY;
-CREATE POLICY tenant_owner ON :"SCHEMA".notes TO bench_reader USING
+CREATE POLICY tenant_owner ON :"SCHEMA".notes TO "constructive-minimal-graphql" USING
   (tenant_key = current_setting('jwt.claims.tenant', true) AND owner_id::text = current_setting('jwt.claims.user_id', true));
 ALTER TABLE :"SCHEMA".tags ENABLE ROW LEVEL SECURITY;
 ALTER TABLE :"SCHEMA".tags FORCE ROW LEVEL SECURITY;
-CREATE POLICY tenant_owner ON :"SCHEMA".tags TO bench_reader USING
+CREATE POLICY tenant_owner ON :"SCHEMA".tags TO "constructive-minimal-graphql" USING
   (tenant_key = current_setting('jwt.claims.tenant', true) AND owner_id::text = current_setting('jwt.claims.user_id', true));
 ALTER TABLE :"SCHEMA".task_tags ENABLE ROW LEVEL SECURITY;
 ALTER TABLE :"SCHEMA".task_tags FORCE ROW LEVEL SECURITY;
-CREATE POLICY tenant_owner ON :"SCHEMA".task_tags TO bench_reader USING
+CREATE POLICY tenant_owner ON :"SCHEMA".task_tags TO "constructive-minimal-graphql" USING
   (tenant_key = current_setting('jwt.claims.tenant', true) AND owner_id::text = current_setting('jwt.claims.user_id', true));
 ALTER TABLE :"SCHEMA".events ENABLE ROW LEVEL SECURITY;
 ALTER TABLE :"SCHEMA".events FORCE ROW LEVEL SECURITY;
-CREATE POLICY tenant_owner ON :"SCHEMA".events TO bench_reader USING
+CREATE POLICY tenant_owner ON :"SCHEMA".events TO "constructive-minimal-graphql" USING
   (tenant_key = current_setting('jwt.claims.tenant', true) AND owner_id::text = current_setting('jwt.claims.user_id', true));
 ALTER TABLE :"SCHEMA".attachments ENABLE ROW LEVEL SECURITY;
 ALTER TABLE :"SCHEMA".attachments FORCE ROW LEVEL SECURITY;
-CREATE POLICY tenant_owner ON :"SCHEMA".attachments TO bench_reader USING
+CREATE POLICY tenant_owner ON :"SCHEMA".attachments TO "constructive-minimal-graphql" USING
   (tenant_key = current_setting('jwt.claims.tenant', true) AND owner_id::text = current_setting('jwt.claims.user_id', true));
 ALTER TABLE :"SCHEMA".settings ENABLE ROW LEVEL SECURITY;
 ALTER TABLE :"SCHEMA".settings FORCE ROW LEVEL SECURITY;
-CREATE POLICY tenant_owner ON :"SCHEMA".settings TO bench_reader USING
+CREATE POLICY tenant_owner ON :"SCHEMA".settings TO "constructive-minimal-graphql" USING
   (tenant_key = current_setting('jwt.claims.tenant', true) AND owner_id::text = current_setting('jwt.claims.user_id', true));
 ALTER TABLE :"SCHEMA".inherited_records ENABLE ROW LEVEL SECURITY;
 ALTER TABLE :"SCHEMA".inherited_records FORCE ROW LEVEL SECURITY;
-CREATE POLICY tenant_owner ON :"SCHEMA".inherited_records TO bench_reader USING
+CREATE POLICY tenant_owner ON :"SCHEMA".inherited_records TO "constructive-minimal-graphql" USING
   (tenant_key = current_setting('jwt.claims.tenant', true) AND owner_id::text = current_setting('jwt.claims.user_id', true));
 
+-- Seed as the administrative connection, bypassing forced RLS.
+RESET ROLE;
 INSERT INTO :"SCHEMA".accounts SELECT i,i,:'SCHEMA','Synthetic account '||i FROM generate_series(1,2) i;
 INSERT INTO :"SCHEMA".projects SELECT i,i,:'SCHEMA',i,'Synthetic project '||i FROM generate_series(1,2) i;
 INSERT INTO :"SCHEMA".tasks SELECT i,i,:'SCHEMA',i,'Synthetic task '||i,'open','normal',42,'[1,9)',ARRAY['synthetic','example'],ARRAY[1,2]::bench_types.score[] FROM generate_series(1,2) i;
@@ -144,8 +156,10 @@ INSERT INTO :"SCHEMA".events SELECT i,i,:'SCHEMA',i,'created' FROM generate_seri
 INSERT INTO :"SCHEMA".attachments SELECT i,i,:'SCHEMA',i,'example.txt' FROM generate_series(1,2) i;
 INSERT INTO :"SCHEMA".settings SELECT i,i,:'SCHEMA','{"synthetic":true}'::jsonb FROM generate_series(1,2) i;
 INSERT INTO :"SCHEMA".inherited_records SELECT i,i,:'SCHEMA','Inherited example '||i FROM generate_series(1,2) i;
-GRANT USAGE ON SCHEMA :"SCHEMA" TO bench_reader;
-GRANT SELECT ON ALL TABLES IN SCHEMA :"SCHEMA" TO bench_reader;
-GRANT EXECUTE ON ALL FUNCTIONS IN SCHEMA :"SCHEMA" TO bench_reader;
+SET LOCAL ROLE "constructive-minimal";
+REVOKE ALL ON ALL FUNCTIONS IN SCHEMA :"SCHEMA" FROM PUBLIC;
+GRANT USAGE ON SCHEMA :"SCHEMA" TO "constructive-minimal-graphql";
+GRANT SELECT ON ALL TABLES IN SCHEMA :"SCHEMA" TO "constructive-minimal-graphql";
+GRANT EXECUTE ON ALL FUNCTIONS IN SCHEMA :"SCHEMA" TO "constructive-minimal-graphql";
 
 COMMIT;
