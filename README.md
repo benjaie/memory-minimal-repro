@@ -73,3 +73,14 @@ Verified through PostGraphile as `constructive-minimal-graphql`:
 
 This returns `"Utility: hello"` and the seeded private record. Only `tenant_000`
 is exposed; neither hidden utilities nor private tables have root query fields.
+
+The bulk block in `schema.sql` adds 50 groups to each of `hidden` and `private`.
+Each group has three tables (including an `@enum` lookup table), two views,
+three functions, a native enum, a domain, a composite type, foreign keys, indexes,
+and sample rows. Change `1..50` to adjust the size. Hidden objects receive SELECT
+and EXECUTE grants; private objects remain inaccessible to the GraphQL role.
+
+With this fixture, the installed snapshot attempts to read the private enum
+tables and emits permission warnings. The schema still builds and exports;
+the registry contains 123 codecs, 17 resources, and 14 relations. These warnings
+and the extra codecs are useful cases for investigating permission filtering.
