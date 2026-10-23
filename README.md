@@ -9,6 +9,16 @@ yarn install --immutable
 GRAPHILE_ENV=development yarn export
 ```
 
+To measure memory before and after building the schema, then release PostGraphile
+and the PostgreSQL service:
+
+```sh
+GRAPHILE_ENV=development node --expose-gc index.ts
+```
+
+Without `--expose-gc`, the script still runs and skips explicit garbage collection.
+Memory usage is printed as before, after, and change in KiB or MiB.
+
 For just the exposed tenant, run `./setup.sh 0` instead.
 
 - `schema.sql`: shared `bench_types` schema and `bench_reader` role.

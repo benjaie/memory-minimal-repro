@@ -5,6 +5,15 @@ import { postgraphile } from "postgraphile";
 import { makePgService } from "postgraphile/adaptors/pg";
 import { PostGraphileAmberPreset } from "postgraphile/presets/amber";
 
+const pgService = makePgService({
+  connectionString: "postgres:///constructive-minimal?host=/var/run/postgresql",
+  schemas: ["tenant_000"],
+});
+
+export async function release() {
+  await pgService.release();
+}
+
 const preset: GraphileConfig.Preset = {
   extends: [PostGraphileAmberPreset],
   plugins: [
@@ -36,12 +45,7 @@ const preset: GraphileConfig.Preset = {
       },
     },
   ],
-  pgServices: [
-    makePgService({
-      connectionString: "postgres:///constructive-minimal?host=/var/run/postgresql",
-      schemas: ["tenant_000"],
-    }),
-  ],
+  pgServices: [pgService],
 };
 export default preset;
 
@@ -54,6 +58,10 @@ if (import.meta.main) {
     await exportSchema(schema, path, { mode: "graphql-js" });
     console.log(`Executable schema: ${path} (${(await stat(path)).size} bytes)`);
   } finally {
-    await pgl.release();
+    try {
+      await pgl.release();
+    } finally {
+      await release();
+    }
   }
 }
