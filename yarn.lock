@@ -97,46 +97,44 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dataplan/json@npm:^1.0.2-aardvark.next-20260928202932":
-  version: 1.0.2-aardvark.next-20260928202932
-  resolution: "@dataplan/json@npm:1.0.2-aardvark.next-20260928202932"
+"@dataplan/json@portal:../../graphile/crystal/grafast/dataplan-json::locator=%40localrepo%2Fmemory-repro%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@dataplan/json@portal:../../graphile/crystal/grafast/dataplan-json::locator=%40localrepo%2Fmemory-repro%40workspace%3A."
   dependencies:
     chalk: "npm:^4.1.2"
     tslib: "npm:^2.8.1"
   peerDependencies:
-    grafast: 1.2.0-aardvark.next-20260928202932
-  checksum: 10c0/faef497d786ef42746d3cda284152960ccb3a61a4084dd2179d8372d67c5673a63cc77c02a924246949f1b7cd4c3102817540db386c86400f0e3d57f533c35e5
+    grafast: "workspace:^1.0.0-rc.8"
   languageName: node
-  linkType: hard
+  linkType: soft
 
-"@dataplan/pg@npm:^1.2.0-aardvark.next-20260928202932":
-  version: 1.2.0-aardvark.next-20260928202932
-  resolution: "@dataplan/pg@npm:1.2.0-aardvark.next-20260928202932"
+"@dataplan/pg@portal:../../graphile/crystal/grafast/dataplan-pg::locator=%40localrepo%2Fmemory-repro%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@dataplan/pg@portal:../../graphile/crystal/grafast/dataplan-pg::locator=%40localrepo%2Fmemory-repro%40workspace%3A."
   dependencies:
-    "@dataplan/json": "npm:^1.0.2-aardvark.next-20260928202932"
-    "@graphile/lru": "npm:^5.0.1-aardvark.next-20260928202932"
-    "@types/node": "npm:^22.19.1"
+    "@dataplan/json": "workspace:^"
+    "@graphile/lru": "workspace:^"
+    "@types/node": "npm:22.x || 24.x || 26.x"
     chalk: "npm:^4.1.2"
     debug: "npm:^4.4.3"
     eventemitter3: "npm:^5.0.1"
-    grafast: "npm:^1.2.0-aardvark.next-20260928202932"
-    pg-sql2: "npm:^5.0.2-aardvark.next-20260928202932"
+    grafast: "workspace:^"
+    pg-sql2: "workspace:^"
     postgres-array: "npm:~3.0.4"
     postgres-range: "npm:^1.1.4"
     tslib: "npm:^2.8.1"
   peerDependencies:
-    "@dataplan/json": ^1.0.2-aardvark.next-20260928202932
-    grafast: ^1.2.0-aardvark.next-20260928202932
-    graphile-config: 1.1.1-aardvark.next-20260928202932
+    "@dataplan/json": "workspace:^"
+    grafast: "workspace:^"
+    graphile-config: "workspace:^1.0.0-rc.5"
     graphql: ^16.9.0
     pg: ^8.7.1
-    pg-sql2: ^5.0.2-aardvark.next-20260928202932
+    pg-sql2: "workspace:^"
   peerDependenciesMeta:
     pg:
       optional: true
-  checksum: 10c0/8bdd3d144b722b37821200c687d3dacf7bae0c41da67b694fb8b1b8266b85ce753fa4ac5f310b96b933bae632a50d8945bc3f3e1cee95f9939a264f5af209343
   languageName: node
-  linkType: hard
+  linkType: soft
 
 "@emotion/is-prop-valid@npm:^1.4.0":
   version: 1.4.0
@@ -206,23 +204,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphile/lru@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "@graphile/lru@npm:5.0.0"
+"@graphile/lru@portal:../../graphile/crystal/utils/lru::locator=%40localrepo%2Fmemory-repro%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@graphile/lru@portal:../../graphile/crystal/utils/lru::locator=%40localrepo%2Fmemory-repro%40workspace%3A."
   dependencies:
     tslib: "npm:^2.8.1"
-  checksum: 10c0/a4cf839cff8f10472ebad8998a55a54394f4d1f91885b6c25a4801a6371db54b21b6d4bf76d24d8aa2f48e7bfc195ad1658cdf43ad4cf9347c006452c09a1498
   languageName: node
-  linkType: hard
-
-"@graphile/lru@npm:^5.0.1-aardvark.next-20260928202932":
-  version: 5.0.1-aardvark.next-20260928202932
-  resolution: "@graphile/lru@npm:5.0.1-aardvark.next-20260928202932"
-  dependencies:
-    tslib: "npm:^2.8.1"
-  checksum: 10c0/a9c3abe5b5816ff14d118f9924eb91660f43e373e0b3116d32e19d4eec7e3592cc5f87edc9498b15c0787e330f8f1d32acf484693a5a4afd95b65416b016c915
-  languageName: node
-  linkType: hard
+  linkType: soft
 
 "@graphiql/plugin-doc-explorer@npm:^0.4.4":
   version: 0.4.4
@@ -392,6 +380,20 @@ __metadata:
   checksum: 10c0/4b30ec8cd56c5fd9a661f088230af01e0c1a3888d11ffb6b47639700f71225be21d1f7e168048d6d4f9449207b978a235c07c8f15c07705685d16dc06280e9d9
   languageName: node
   linkType: hard
+
+"@localrepo/memory-repro@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@localrepo/memory-repro@workspace:."
+  dependencies:
+    "@tsconfig/node-ts": "npm:^23.6.4"
+    "@tsconfig/node24": "npm:24"
+    "@types/node": "npm:24.x"
+    grafast: "npm:^1.2.0-aardvark.next-20260928202932"
+    graphile-export: "npm:^1.0.2-aardvark.next-20260928202932"
+    postgraphile: "npm:^5.2.0-aardvark.next-20260928202932"
+    typescript: "npm:6"
+  languageName: unknown
+  linkType: soft
 
 "@n1ru4l/push-pull-async-iterable-iterator@npm:^3.1.0":
   version: 3.2.0
@@ -1016,32 +1018,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tsconfig/node24@npm:^24.0.5":
+"@tsconfig/node24@npm:24":
   version: 24.0.5
   resolution: "@tsconfig/node24@npm:24.0.5"
   checksum: 10c0/cea0c13ac00121e210f69823104d69081c99cf98c801a0772b6df5b51b3412e188084d74b6d2a42b33f29e3cf99298faf02c0baed41d336f5ef8828cc04d458f
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
-  version: 26.6.5
-  resolution: "@types/node@npm:26.6.5"
-  dependencies:
-    undici-types: "npm:~8.9.0"
-  checksum: 10c0/4f791f69466ace7842c09e7bef96cb1ddbb65cf3db916ef7e84f0e2b2a17220b6b816dc7539d01520cadfb17ed7169b8214910900493e0a83be8bc7d124ec20a
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:24":
-  version: 24.19.2
-  resolution: "@types/node@npm:24.19.2"
-  dependencies:
-    undici-types: "npm:>=7.24.0 <7.24.7"
-  checksum: 10c0/b51a7f8854007ad579dffdd0633d8addbfeb2c97cceb380f2eba0ed163638ec52e17565385a6cc04d54ac4ff99c70c64aee68a4ca45b6128c035e828794e29c5
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^22.19.1":
+"@types/node@npm:22.x":
   version: 22.20.5
   resolution: "@types/node@npm:22.20.5"
   dependencies:
@@ -1285,15 +1269,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"grafast@npm:^1.2.0-aardvark.next-20260928202932":
-  version: 1.2.0-aardvark.next-20260928202932
-  resolution: "grafast@npm:1.2.0-aardvark.next-20260928202932"
+"grafast@portal:../../graphile/crystal/grafast/grafast::locator=%40localrepo%2Fmemory-repro%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "grafast@portal:../../graphile/crystal/grafast/grafast::locator=%40localrepo%2Fmemory-repro%40workspace%3A."
   dependencies:
-    "@graphile/lru": "npm:^5.0.1-aardvark.next-20260928202932"
+    "@graphile/lru": "workspace:^"
     chalk: "npm:^4.1.2"
     debug: "npm:^4.4.3"
     eventemitter3: "npm:^5.0.1"
-    graphile-config: "npm:^1.1.1-aardvark.next-20260928202932"
+    graphile-config: "workspace:^"
     graphql: "npm:^16.9.0"
     iterall: "npm:^1.3.0"
     tslib: "npm:^2.8.1"
@@ -1303,26 +1287,25 @@ __metadata:
   peerDependenciesMeta:
     "@envelop/core":
       optional: true
-  checksum: 10c0/b437145f96dd6ced42817ff1edc4b23e4072e4b7c213222c0016b271ccd2d2d31b62b451dea2c90148c6f603b393ffe3f3d602000ab26ed04d3237e25b7acefc
   languageName: node
-  linkType: hard
+  linkType: soft
 
-"grafserv@npm:^1.0.2-aardvark.next-20260928202932":
-  version: 1.0.2
-  resolution: "grafserv@npm:1.0.2"
+"grafserv@portal:../../graphile/crystal/grafast/grafserv::locator=%40localrepo%2Fmemory-repro%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "grafserv@portal:../../graphile/crystal/grafast/grafserv::locator=%40localrepo%2Fmemory-repro%40workspace%3A."
   dependencies:
-    "@graphile/lru": "npm:^5.0.0"
+    "@graphile/lru": "workspace:^"
     debug: "npm:^4.4.3"
     eventemitter3: "npm:^5.0.1"
-    graphile-config: "npm:^1.1.1"
+    graphile-config: "workspace:^"
     graphql-ws: "npm:^6.0.5"
-    ruru: "npm:^2.0.2"
+    ruru: "workspace:^"
     tslib: "npm:^2.8.1"
   peerDependencies:
     "@envelop/core": ^5.0.0
     "@whatwg-node/server": ^0.9.64
-    grafast: ^1.0.0-rc.8
-    graphile-config: ^1.1.1
+    grafast: "workspace:^1.0.0-rc.8"
+    graphile-config: "workspace:^"
     graphql: ^16.9.0
     h3: ^1.13.0
     hono: ^4.6.15
@@ -1338,65 +1321,62 @@ __metadata:
       optional: true
     ws:
       optional: true
-  checksum: 10c0/b9cd7c90c868ae47ff80467a4c2f8fd1195bfb79ea3a208d3bf2046fffc66b6759a85814f063d1f7e1a2920e42eaf96d5193c7d8c208334993a46ce70827370d
   languageName: node
-  linkType: hard
+  linkType: soft
 
-"graphile-build-pg@npm:^5.2.0-aardvark.next-20260928202932":
-  version: 5.2.0-aardvark.next-20260928202932
-  resolution: "graphile-build-pg@npm:5.2.0-aardvark.next-20260928202932"
+"graphile-build-pg@portal:../../graphile/crystal/graphile-build/graphile-build-pg::locator=%40localrepo%2Fmemory-repro%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "graphile-build-pg@portal:../../graphile/crystal/graphile-build/graphile-build-pg::locator=%40localrepo%2Fmemory-repro%40workspace%3A."
   dependencies:
-    "@types/node": "npm:^22.19.1"
+    "@types/node": "npm:22.x || 24.x || 26.x"
     debug: "npm:^4.4.3"
-    graphile-config: "npm:^1.1.1-aardvark.next-20260928202932"
+    graphile-config: "workspace:^"
     jsonwebtoken: "npm:^9.0.2"
-    pg-introspection: "npm:^1.0.2-aardvark.next-20260928202932"
-    pg-sql2: "npm:^5.0.2-aardvark.next-20260928202932"
+    pg-introspection: "workspace:^"
+    pg-sql2: "workspace:^"
     tslib: "npm:^2.8.1"
   peerDependencies:
-    "@dataplan/pg": 1.2.0-aardvark.next-20260928202932
-    grafast: 1.2.0-aardvark.next-20260928202932
-    graphile-build: 5.2.0-aardvark.next-20260928202932
-    graphile-config: 1.1.1-aardvark.next-20260928202932
+    "@dataplan/pg": "workspace:^1.0.0-rc.7"
+    grafast: "workspace:^1.0.0-rc.8"
+    graphile-build: "workspace:^5.0.0-rc.5"
+    graphile-config: "workspace:^1.0.0-rc.5"
     graphql: ^16.9.0
     pg: ^8.7.1
-    pg-sql2: 5.0.2-aardvark.next-20260928202932
-    tamedevil: 0.1.2-aardvark.next-20260928202932
+    pg-sql2: "workspace:^5.0.0-rc.4"
+    tamedevil: "workspace:^0.1.0-rc.5"
   peerDependenciesMeta:
     pg:
       optional: true
-  checksum: 10c0/93be11c48ad298830a38b065d04dfeec99efaed527b8fdd96873db7d0488c725305e5c17efebcbc769f62ac2ccacafc8ab7661e8f7c52434fee7baa9265cd790
   languageName: node
-  linkType: hard
+  linkType: soft
 
-"graphile-build@npm:^5.2.0-aardvark.next-20260928202932":
-  version: 5.2.0-aardvark.next-20260928202932
-  resolution: "graphile-build@npm:5.2.0-aardvark.next-20260928202932"
+"graphile-build@portal:../../graphile/crystal/graphile-build/graphile-build::locator=%40localrepo%2Fmemory-repro%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "graphile-build@portal:../../graphile/crystal/graphile-build/graphile-build::locator=%40localrepo%2Fmemory-repro%40workspace%3A."
   dependencies:
-    "@types/node": "npm:^22.19.1"
+    "@types/node": "npm:22.x || 24.x || 26.x"
     "@types/pluralize": "npm:^0.0.33"
     "@types/semver": "npm:^7.7.1"
     chalk: "npm:^4.1.2"
     debug: "npm:^4.4.3"
-    graphile-config: "npm:^1.1.1-aardvark.next-20260928202932"
+    graphile-config: "workspace:^"
     graphql: "npm:^16.9.0"
     lodash: "npm:^4.18.1"
     pluralize: "npm:^7.0.0"
     semver: "npm:^7.7.3"
-    tamedevil: "npm:^0.1.2-aardvark.next-20260928202932"
+    tamedevil: "workspace:^"
     transliteration: "npm:^2.3.5"
     tslib: "npm:^2.8.1"
   peerDependencies:
-    grafast: 1.2.0-aardvark.next-20260928202932
-    graphile-config: 1.1.1-aardvark.next-20260928202932
+    grafast: "workspace:^1.0.0-rc.8"
+    graphile-config: "workspace:^1.0.0-rc.5"
     graphql: ^16.9.0
-  checksum: 10c0/a044cb87dfbaeb6770202facf3ecb7e48b5f1d942e816336e64a3ab6070c37bcb16e65f4cb03da7ffb81a9cf681876680f4f45cbc217136ec6cbf3b2e356d7f7
   languageName: node
-  linkType: hard
+  linkType: soft
 
-"graphile-config@npm:^1.1.1, graphile-config@npm:^1.1.1-aardvark.next-20260928202932":
-  version: 1.1.1
-  resolution: "graphile-config@npm:1.1.1"
+"graphile-config@portal:../../graphile/crystal/utils/graphile-config::locator=%40localrepo%2Fmemory-repro%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "graphile-config@portal:../../graphile/crystal/utils/graphile-config::locator=%40localrepo%2Fmemory-repro%40workspace%3A."
   dependencies:
     chalk: "npm:^4.1.2"
     debug: "npm:^4.4.3"
@@ -1404,56 +1384,53 @@ __metadata:
     semver: "npm:^7.7.3"
     tslib: "npm:^2.8.1"
     yargs: "npm:^17.7.2"
-  checksum: 10c0/884d207fa7e42e4594843923ebf97ad26c1f19990f6a82e41ca60928f3d9bd3a3c5438e6b1121c7cff6ff1d95900c1bca97790e24575bbb9f54323c5deb3d35a
   languageName: node
-  linkType: hard
+  linkType: soft
 
-"graphile-export@npm:^1.0.2-aardvark.next-20260928202932":
-  version: 1.0.2-aardvark.next-20260928202932
-  resolution: "graphile-export@npm:1.0.2-aardvark.next-20260928202932"
+"graphile-export@portal:../../graphile/crystal/utils/graphile-export::locator=%40localrepo%2Fmemory-repro%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "graphile-export@portal:../../graphile/crystal/utils/graphile-export::locator=%40localrepo%2Fmemory-repro%40workspace%3A."
   dependencies:
     "@babel/generator": "npm:^7.28.5"
     "@babel/parser": "npm:^7.28.5"
     "@babel/template": "npm:^7.27.2"
     "@babel/traverse": "npm:^7.28.5"
     "@babel/types": "npm:^7.28.5"
-    "@types/node": "npm:^22.19.1"
+    "@types/node": "npm:22.x || 24.x || 26.x"
     prettier: "npm:^3.6.2"
     tslib: "npm:^2.8.1"
   peerDependencies:
     eslint: ^8.48.0 || ^9.26.0
-    grafast: 1.2.0-aardvark.next-20260928202932
-    pg-sql2: 5.0.2-aardvark.next-20260928202932
+    grafast: "workspace:^1.0.0-rc.8"
+    pg-sql2: "workspace:^5.0.0-rc.4"
   peerDependenciesMeta:
     eslint:
       optional: true
     pg-sql2:
       optional: true
-  checksum: 10c0/546c43f754a93986e578a453fbbeef4a873238c4be3b32ec47438bd9c5619669be6f8b20db51a2a3e78f9781c7d36c82f77cc0e8b80b4a135d9749e51126c077
   languageName: node
-  linkType: hard
+  linkType: soft
 
-"graphile-utils@npm:^5.1.0-aardvark.next-20260928202932":
-  version: 5.1.0-aardvark.next-20260928202932
-  resolution: "graphile-utils@npm:5.1.0-aardvark.next-20260928202932"
+"graphile-utils@portal:../../graphile/crystal/graphile-build/graphile-utils::locator=%40localrepo%2Fmemory-repro%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "graphile-utils@portal:../../graphile/crystal/graphile-build/graphile-utils::locator=%40localrepo%2Fmemory-repro%40workspace%3A."
   dependencies:
     debug: "npm:^4.4.3"
     json5: "npm:^2.2.3"
     tslib: "npm:^2.8.1"
   peerDependencies:
-    "@dataplan/pg": 1.2.0-aardvark.next-20260928202932
-    grafast: 1.2.0-aardvark.next-20260928202932
-    graphile-build: 5.2.0-aardvark.next-20260928202932
-    graphile-build-pg: 5.2.0-aardvark.next-20260928202932
-    graphile-config: 1.1.1-aardvark.next-20260928202932
+    "@dataplan/pg": "workspace:^1.0.0-rc.7"
+    grafast: "workspace:^1.0.0-rc.8"
+    graphile-build: "workspace:^5.0.0-rc.5"
+    graphile-build-pg: "workspace:^5.0.0-rc.7"
+    graphile-config: "workspace:^1.0.0-rc.5"
     graphql: ^16.9.0
-    tamedevil: 0.1.2-aardvark.next-20260928202932
+    tamedevil: "workspace:^0.1.0-rc.5"
   peerDependenciesMeta:
     graphile-build-pg:
       optional: true
-  checksum: 10c0/c5e9f8855280e55b17fb33a87a02b31abfed7ae4c5f510102cb313690e1cdfe9dc2f7352f4da59c1f958961672d7d0cd0d59b0a69be35523434dca76b62fc849
   languageName: node
-  linkType: hard
+  linkType: soft
 
 "graphiql@npm:^5.2.1":
   version: 5.4.0
@@ -1817,14 +1794,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pg-introspection@npm:^1.0.2-aardvark.next-20260928202932":
-  version: 1.0.2-aardvark.next-20260928202932
-  resolution: "pg-introspection@npm:1.0.2-aardvark.next-20260928202932"
+"pg-introspection@portal:../../graphile/crystal/utils/pg-introspection::locator=%40localrepo%2Fmemory-repro%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "pg-introspection@portal:../../graphile/crystal/utils/pg-introspection::locator=%40localrepo%2Fmemory-repro%40workspace%3A."
   dependencies:
     tslib: "npm:^2.8.1"
-  checksum: 10c0/7e56a455019b6b0f99fc47544f9eb5ac28d6383f5bdc238d9f7c8febc28ee2e5c28577748227cf482a7b9aa65586b50ba75aa5a6aed2f1e8a43410bc8c8d85ff
   languageName: node
-  linkType: hard
+  linkType: soft
 
 "pg-pool@npm:^3.14.0":
   version: 3.14.0
@@ -1842,15 +1818,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pg-sql2@npm:^5.0.2-aardvark.next-20260928202932":
-  version: 5.0.2-aardvark.next-20260928202932
-  resolution: "pg-sql2@npm:5.0.2-aardvark.next-20260928202932"
+"pg-sql2@portal:../../graphile/crystal/utils/pg-sql2::locator=%40localrepo%2Fmemory-repro%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "pg-sql2@portal:../../graphile/crystal/utils/pg-sql2::locator=%40localrepo%2Fmemory-repro%40workspace%3A."
   dependencies:
-    "@graphile/lru": "npm:^5.0.1-aardvark.next-20260928202932"
+    "@graphile/lru": "workspace:^"
     tslib: "npm:^2.8.1"
-  checksum: 10c0/b690239e1ecaa25224a963fc95521d119340755daaacb415a044835949cc58d2545128d75fe3346b70cdcf630d9731cf45e5f084b740906f3be289898ad64ebe
   languageName: node
-  linkType: hard
+  linkType: soft
 
 "pg-types@npm:2.2.0, pg-types@npm:^2.2.0":
   version: 2.2.0
@@ -1917,51 +1892,50 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postgraphile@npm:^5.2.0-aardvark.next-20260928202932":
-  version: 5.2.0-aardvark.next-20260928202932
-  resolution: "postgraphile@npm:5.2.0-aardvark.next-20260928202932"
+"postgraphile@portal:../../graphile/crystal/postgraphile/postgraphile::locator=%40localrepo%2Fmemory-repro%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "postgraphile@portal:../../graphile/crystal/postgraphile/postgraphile::locator=%40localrepo%2Fmemory-repro%40workspace%3A."
   dependencies:
-    "@dataplan/json": "npm:^1.0.2-aardvark.next-20260928202932"
-    "@dataplan/pg": "npm:^1.2.0-aardvark.next-20260928202932"
-    "@graphile/lru": "npm:^5.0.1-aardvark.next-20260928202932"
-    "@types/node": "npm:^22.19.1"
+    "@dataplan/json": "workspace:^"
+    "@dataplan/pg": "workspace:^"
+    "@graphile/lru": "workspace:^"
+    "@types/node": "npm:22.x || 24.x || 26.x"
     "@types/pg": "npm:^8.15.6"
     debug: "npm:^4.4.3"
-    grafast: "npm:^1.2.0-aardvark.next-20260928202932"
-    grafserv: "npm:^1.0.2-aardvark.next-20260928202932"
-    graphile-build: "npm:^5.2.0-aardvark.next-20260928202932"
-    graphile-build-pg: "npm:^5.2.0-aardvark.next-20260928202932"
-    graphile-config: "npm:^1.1.1-aardvark.next-20260928202932"
-    graphile-utils: "npm:^5.1.0-aardvark.next-20260928202932"
+    grafast: "workspace:^"
+    grafserv: "workspace:^"
+    graphile-build: "workspace:^"
+    graphile-build-pg: "workspace:^"
+    graphile-config: "workspace:^"
+    graphile-utils: "workspace:^"
     graphql: "npm:^16.9.0"
     iterall: "npm:^1.3.0"
     jsonwebtoken: "npm:^9.0.2"
     pg: "npm:^8.16.3"
-    pg-sql2: "npm:^5.0.2-aardvark.next-20260928202932"
-    tamedevil: "npm:^0.1.2-aardvark.next-20260928202932"
+    pg-sql2: "workspace:^"
+    tamedevil: "workspace:^"
     tslib: "npm:^2.8.1"
-    ws: "npm:^8.18.3"
+    ws: "npm:^8.21.1"
   peerDependencies:
-    "@dataplan/json": ^1.0.2-aardvark.next-20260928202932
-    "@dataplan/pg": ^1.2.0-aardvark.next-20260928202932
+    "@dataplan/json": "workspace:^"
+    "@dataplan/pg": "workspace:^"
     "@envelop/core": ^5.0.0
-    grafast: ^1.2.0-aardvark.next-20260928202932
-    grafserv: ^1.0.2-aardvark.next-20260928202932
-    graphile-build: ^5.2.0-aardvark.next-20260928202932
-    graphile-build-pg: ^5.2.0-aardvark.next-20260928202932
-    graphile-config: ^1.1.1-aardvark.next-20260928202932
+    grafast: "workspace:^"
+    grafserv: "workspace:^"
+    graphile-build: "workspace:^"
+    graphile-build-pg: "workspace:^"
+    graphile-config: "workspace:^"
     graphql: ^16.9.0
     pg: ^8.7.1
-    pg-sql2: ^5.0.2-aardvark.next-20260928202932
-    tamedevil: ^0.1.2-aardvark.next-20260928202932
+    pg-sql2: "workspace:^"
+    tamedevil: "workspace:^"
   peerDependenciesMeta:
     "@envelop/core":
       optional: true
   bin:
-    postgraphile: dist/cli-run.js
-  checksum: 10c0/58060cfe0ba47d27ce2b3ba64bd0afd383b9269901e09791e1ecbbd1b2ec9e3bef6de7d212386ed8a5c65ed8c32b55b52a89b6dac87214e3e6b0644f7f30c947
+    postgraphile: ./dist/cli-run.js
   languageName: node
-  linkType: hard
+  linkType: soft
 
 "postgres-array@npm:~2.0.0":
   version: 2.0.0
@@ -2142,23 +2116,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"root-workspace-0b6124@workspace:.":
+"ruru-types@portal:../../graphile/crystal/grafast/ruru-types::locator=%40localrepo%2Fmemory-repro%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "root-workspace-0b6124@workspace:."
-  dependencies:
-    "@tsconfig/node-ts": "npm:^23.6.4"
-    "@tsconfig/node24": "npm:^24.0.5"
-    "@types/node": "npm:24"
-    grafast: "npm:^1.2.0-aardvark.next-20260928202932"
-    graphile-export: "npm:^1.0.2-aardvark.next-20260928202932"
-    postgraphile: "npm:^5.2.0-aardvark.next-20260928202932"
-    typescript: "npm:6"
-  languageName: unknown
-  linkType: soft
-
-"ruru-types@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "ruru-types@npm:2.0.0"
+  resolution: "ruru-types@portal:../../graphile/crystal/grafast/ruru-types::locator=%40localrepo%2Fmemory-repro%40workspace%3A."
   dependencies:
     "@graphiql/toolkit": "npm:^0.11.3"
     graphiql: "npm:^5.2.1"
@@ -2171,23 +2131,22 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: 10c0/ed8cba95bc5d11445c2c74f0611d92e13263000c2f267bf01b339d5f6e6cd2f4c30aa8171dc4135050c8a702f7f6734f8499ff03ba0cb9af7267208806eb2db7
   languageName: node
-  linkType: hard
+  linkType: soft
 
-"ruru@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "ruru@npm:2.0.2"
+"ruru@portal:../../graphile/crystal/grafast/ruru::locator=%40localrepo%2Fmemory-repro%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "ruru@portal:../../graphile/crystal/grafast/ruru::locator=%40localrepo%2Fmemory-repro%40workspace%3A."
   dependencies:
     "@emotion/is-prop-valid": "npm:^1.4.0"
-    graphile-config: "npm:^1.1.1"
+    graphile-config: "workspace:^"
     graphql: "npm:^16.9.0"
     http-proxy: "npm:^1.18.1"
-    ruru-types: "npm:^2.0.0"
+    ruru-types: "workspace:^"
     tslib: "npm:^2.8.1"
     yargs: "npm:^17.7.2"
   peerDependencies:
-    graphile-config: ^1.0.0-rc.5
+    graphile-config: "workspace:^1.0.0-rc.5"
     graphql: ^16.9.0
     react: ^18 || ^19
     react-dom: ^18 || ^19
@@ -2197,10 +2156,9 @@ __metadata:
     react-dom:
       optional: true
   bin:
-    ruru: dist/cli-run.js
-  checksum: 10c0/590f5a2b96a24ce24f47401c0f9938e368a71f451ebcad52616723ffe2e947782c4801a8bac6bfab176b50e13b0641d7131dc8a445141e63220d35b32db7c0a4
+    ruru: ./dist/cli-run.js
   languageName: node
-  linkType: hard
+  linkType: soft
 
 "safe-buffer@npm:^5.0.1":
   version: 5.2.1
@@ -2271,15 +2229,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tamedevil@npm:^0.1.2-aardvark.next-20260928202932":
-  version: 0.1.2-aardvark.next-20260928202932
-  resolution: "tamedevil@npm:0.1.2-aardvark.next-20260928202932"
+"tamedevil@portal:../../graphile/crystal/utils/tamedevil::locator=%40localrepo%2Fmemory-repro%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "tamedevil@portal:../../graphile/crystal/utils/tamedevil::locator=%40localrepo%2Fmemory-repro%40workspace%3A."
   dependencies:
-    "@graphile/lru": "npm:^5.0.1-aardvark.next-20260928202932"
+    "@graphile/lru": "workspace:^"
     tslib: "npm:^2.8.1"
-  checksum: 10c0/00003bbb612711f62728fe82f6ee3b70d9489e1c43661d3af6eb48e822e594cafc15ca6b3ebe89be2a21991bf4371d8004814dd43192f1344d7dcb0d8b441447
   languageName: node
-  linkType: hard
+  linkType: soft
 
 "transliteration@npm:^2.3.5":
   version: 2.6.1
@@ -2325,24 +2282,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici-types@npm:>=7.24.0 <7.24.7":
-  version: 7.24.6
-  resolution: "undici-types@npm:7.24.6"
-  checksum: 10c0/d9cd8befb643ac904615c280a095ba4240531f6bb4a5e75a22a7483630ca8d3f1016d2ab6ace6ceda1f63b3a2db2fe037fafe121d6917a0187573aa548ff78ca
-  languageName: node
-  linkType: hard
-
 "undici-types@npm:~6.21.0":
   version: 6.21.0
   resolution: "undici-types@npm:6.21.0"
   checksum: 10c0/c01ed51829b10aa72fc3ce64b747f8e74ae9b60eafa19a7b46ef624403508a54c526ffab06a14a26b3120d055e1104d7abe7c9017e83ced038ea5cf52f8d5e04
-  languageName: node
-  linkType: hard
-
-"undici-types@npm:~8.9.0":
-  version: 8.9.0
-  resolution: "undici-types@npm:8.9.0"
-  checksum: 10c0/51c712c20c087368f62c6fc0f2bc49fa76bfe5dec28ff01584bb677ff29b0622569783c02d43e151143808c48c0503f804093bd2c491b10f2a830138034cb451
   languageName: node
   linkType: hard
 
@@ -2404,7 +2347,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:^8.18.3":
+"ws@npm:^8.21.1":
   version: 8.22.0
   resolution: "ws@npm:8.22.0"
   peerDependencies:

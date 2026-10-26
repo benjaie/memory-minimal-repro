@@ -1,4 +1,6 @@
 {
+  "name": "@localrepo/memory-repro",
+  "private": true,
   "type": "module",
   "main": "index.ts",
   "packageManager": "yarn@4.18.1",
@@ -9,11 +11,39 @@
   },
   "dependencies": {
     "@tsconfig/node-ts": "^23.6.4",
-    "@tsconfig/node24": "^24.0.5",
-    "@types/node": "24",
+    "@tsconfig/node24": "24",
+    "@types/node": "24.x",
     "grafast": "^1.2.0-aardvark.next-20260928202932",
     "graphile-export": "^1.0.2-aardvark.next-20260928202932",
     "postgraphile": "^5.2.0-aardvark.next-20260928202932",
     "typescript": "6"
+  },
+  "resolutions": {
+    "@dataplan/json": "portal:../../graphile/crystal/grafast/dataplan-json",
+    "@dataplan/pg": "portal:../../graphile/crystal/grafast/dataplan-pg",
+    "@grafserv/persisted": "portal:../../graphile/crystal/grafast/grafserv-persisted",
+    "@graphile/lru": "portal:../../graphile/crystal/utils/lru",
+    "@graphile/simplify-inflection": "portal:../../graphile/crystal/graphile-build/graphile-simplify-inflection",
+    "@types/node": "22.x",
+    "eslint-plugin-graphile-export": "portal:../../graphile/crystal/utils/eslint-plugin-graphile-export",
+    "grafast": "portal:../../graphile/crystal/grafast/grafast",
+    "grafserv": "portal:../../graphile/crystal/grafast/grafserv",
+    "graphile": "portal:../../graphile/crystal/utils/graphile",
+    "graphile-build": "portal:../../graphile/crystal/graphile-build/graphile-build",
+    "graphile-build-pg": "portal:../../graphile/crystal/graphile-build/graphile-build-pg",
+    "graphile-config": "portal:../../graphile/crystal/utils/graphile-config",
+    "graphile-export": "portal:../../graphile/crystal/utils/graphile-export",
+    "graphile-utils": "portal:../../graphile/crystal/graphile-build/graphile-utils",
+    "graphql-codegen-grafast": "portal:../../graphile/crystal/grafast/codegen-plugin",
+    "jest-serializer-graphql-schema": "portal:../../graphile/crystal/utils/jest-serializer-graphql-schema",
+    "jest-serializer-simple": "portal:../../graphile/crystal/utils/jest-serializer-simple",
+    "pg-introspection": "portal:../../graphile/crystal/utils/pg-introspection",
+    "pg-sql2": "portal:../../graphile/crystal/utils/pg-sql2",
+    "pgl": "portal:../../graphile/crystal/postgraphile/pgl",
+    "postgraphile": "portal:../../graphile/crystal/postgraphile/postgraphile",
+    "ruru": "portal:../../graphile/crystal/grafast/ruru",
+    "ruru-components": "portal:../../graphile/crystal/grafast/ruru-components",
+    "ruru-types": "portal:../../graphile/crystal/grafast/ruru-types",
+    "tamedevil": "portal:../../graphile/crystal/utils/tamedevil"
   }
 }
